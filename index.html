@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<title>Color Guessing Game</title>
 </head>
 <body>
 	<div class="headerContainer">
-		<h2 class="headerContent">The great<br>
-			<span id="rgbHeader">RGB()</span><br>
-		guessing game</h2>
+		<h2 class="headerContent">The great</h2>
+		<h2 class="headerContent" id="rgbHeader">RGB()</h2>
+		<h2 class="headerContent">guessing game</h2>
 	</div>
 	<div class="navBar">
 		<div class="navButton" id="newColors">
 			New Colors
 		</div>
-		<div id="tryAgain">
-			Try Again
+		<div id="tryAgain" class="navButton">
+			Try Again!
 		</div>
 		<div class="navButton" id="easyOrHard">
-			<p id="easy">Easy</p>
-			<p id="hard">hard</p>
+			<div id="easy">Easy</div>
+			<div id="hard">hard</div>
 		</div>
 	</div>
 
@@ -36,6 +37,6 @@
 			<div class="colorBoxes" id="box6"></div>
 		</div>
 	</div>
-<script src="app.js"></script>	
+<script src="app.js"></script>
 </body>
 </html>
