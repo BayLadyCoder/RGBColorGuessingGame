@@ -1,38 +1,48 @@
 body {
+	margin: 0;
+	padding: 0;
 	background-color: #232323;
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
 }
 
 .headerContainer {
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	text-transform: capitalize;
 	text-align: center;
 	flex-direction: column;
 	margin: 0;
-	padding: 0;
+	padding: 10px 0;
 	font-weight: 400;
 	background-color: #067e82;
-	color: black;
+	color: #eee;
 }
 
 h2 {
-	margin: 12px 0;
+	margin: 8px 0;
+	font-size: 25px;
 }
+
 #rgbHeader {
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 700;
 }
 
 .navBar {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	padding: 0 100px;
-	background-color: #d6dbdb;
+	padding: 0;
+	background-color: #eee;
 	color: #2f6ae0;
-	font-size: 25px;
+	font-size: 20px;
 	height: 40px;
 	font-weight: 700;
 }
@@ -48,6 +58,7 @@ h2 {
 #newColors:hover, #easy:hover, #hard:hover {
 	background-color: #2f6ae0;
 	color: white;
+	cursor: pointer;
 }
 #tryAgain {
 	color: #ed6410;
@@ -61,14 +72,41 @@ h2 {
 	justify-content: space-around;
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
 
 #easy, #hard {
-	/* padding: 0 15px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	margin: 0;
 	padding: 0 20px;
+}
+
+.colorBoxesContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 800px;
+	height: 350px;
+	padding-top: 20px;
+	margin-top: 30px;
+	border-radius: 20px;
+}
+
+#upperColorBoxes, #lowerColorBoxes {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	height: 50%;
+
+}
+
+.colorBoxes {
+	width: 23%;
+	height: 90%;
+	background-color: white;
+	border-radius: 20px;
 }
