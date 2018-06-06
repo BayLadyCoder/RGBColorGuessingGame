@@ -107,6 +107,11 @@ h2 {
 .colorBoxes {
 	width: 23%;
 	height: 90%;
-	background-color: white;
+	/* background: white; */
 	border-radius: 20px;
+}
+
+.colorBoxes:hover {
+	cursor: pointer;
+	border: solid white 3px;
 }
