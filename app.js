@@ -10,31 +10,55 @@ function randomColor() {
   return `${red}, ${green}, ${blue}`;
 }
 
-const arrColors = [];
+
 
 // Create an array of set of random numbers
-for (let i=0 ; i < 6; i++) {
-  arrColors[i] = `${randomColor()}`;
+function arrColors(num){
+  const arrColors = [];
+  for (let i=0 ; i < num; i++) {
+    arrColors[i] = `${randomColor()}`;
+  }
+  return arrColors;
 }
 
-console.log(arrColors);
 
 const rgbHeader = document.querySelector("#rgbHeader");
-
-function pickedColor() {
-  const randomPick = Math.floor(Math.random()*arrColors.length)
-  return arrColors[randomPick];
-}
-
-function getNewColor() {
-  rgbHeader.innerHTML = `RGB ${pickedColor()}`;
-}
-
-getNewColor();
-
 const colorBoxes = [...document.querySelectorAll(".colorBoxes")];
 
-for (let i=0 ; i< colorBoxes.length ; i++) {
-  colorBoxes[i].style.background = `rgb(${arrColors[i]})`;
+const arrColorsSet = arrColors(6);
+
+function pickedColor() {
+  const randomPick = Math.floor(Math.random()*arrColorsSet.length);
+  const pickedColor = `rgb(${arrColorsSet[randomPick]})`;
+  return pickedColor;
 }
-console.log(colorBoxes);
+function generateColors() {
+  for (let i=0 ; i< colorBoxes.length ; i++) {
+    colorBoxes[i].style.background = `rgb(${arrColorsSet[i]})`;
+  }
+}
+////////////////////////////////////////////////////////////////
+function getNewColor() {
+  return rgbHeader.innerHTML = `RGB ${pickedColor()}`;
+}
+
+getNewColor(6);
+generateColors();
+////////////////////////////////////////////////////////////////
+
+
+const clickedColor = colorBoxes.map(box => {
+  box.addEventListener("click", function () {
+  const clickedColorVal = this.style.backgroundColor;
+  const pickedColorVal = pickedColor();
+
+  if (clickedColorVal === pickedColorVal) {
+    return colorBoxes.map(box => {
+      const correctBGColor = clickedColorVal;
+      box.style = `background-color: ${clickedColorVal}; opacity: 1;`;
+    });
+  }
+  else {
+    return this.style = "background: #232323; opacity: 0;";
+  }
+})});

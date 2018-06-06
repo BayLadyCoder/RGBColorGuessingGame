@@ -56,9 +56,9 @@ h2 {
 }
 
 #newColors:hover, #easy:hover, #hard:hover {
-	background-color: #2f6ae0;
-	color: white;
+	border: solid 1px #2f6ae0;
 	cursor: pointer;
+	font-size: 22px;
 }
 #tryAgain {
 	color: #ed6410;
@@ -82,6 +82,12 @@ h2 {
 	height: 100%;
 	margin: 0;
 	padding: 0 20px;
+}
+
+.selectedMode {
+	background-color: #2f6ae0;
+	color: white;
+	cursor: pointer;
 }
 
 .colorBoxesContainer {
