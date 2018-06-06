@@ -58,6 +58,8 @@ let theColor = pickedColor();
 
 
 ////////////////////////////////////////////////////////////////
+const headerContainer = document.querySelector(".headerContainer");
+
 const clickedColor = colorBoxes.map(box => {
   box.addEventListener("click", function () {
   const clickedColorVal = this.style.backgroundColor;
@@ -69,6 +71,7 @@ const clickedColor = colorBoxes.map(box => {
     return colorBoxes.map(box => {
       const correctBGColor = clickedColorVal;
       box.style = `background-color: ${clickedColorVal}; opacity: 1;`;
+      headerContainer.style = `background-color: ${clickedColorVal};`;
     });
   }
   else {
@@ -101,6 +104,7 @@ function easyModeOn() {
   getNewColor();
   generateColors();
   lowerColorBoxes.style.display = "none";
+  headerContainer.style = `background-color: #067e82;`;
 }
 
 function hardModeOn() {
@@ -109,6 +113,7 @@ function hardModeOn() {
   getNewColor();
   generateColors();
   lowerColorBoxes.style.display = "flex";
+  headerContainer.style = `background-color: #067e82;`;
 }
 
 newColors.addEventListener("click", function (){
