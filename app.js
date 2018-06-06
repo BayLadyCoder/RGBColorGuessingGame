@@ -20,16 +20,15 @@ function arrColors(num){
 }
 
 
-
 const rgbHeader = document.querySelector("#rgbHeader");
 const colorBoxes = [...document.querySelectorAll(".colorBoxes")];
 
-function resetGame(num) {
+function newGame(num) {
   const arrColorsSet = arrColors(num);
   return arrColorsSet;
 };
 
-let arrColorsSet = resetGame(6);
+let arrColorsSet = newGame(6);
 
 function pickedColor() {
     const randomPick = Math.floor(Math.random()*arrColorsSet.length);
@@ -80,30 +79,42 @@ const clickedColor = colorBoxes.map(box => {
 
 
 const newColors = document.querySelector("#newColors");
-const whichModes = [...document.querySelectorAll(".modeOptions")];
-const easyMode = whichModes[0];
-const hardMode = whichModes[1];
+const lowerColorBoxes = document.querySelector("#lowerColorBoxes");
+const easyMode = document.querySelector("#easy");
+const hardMode = document.querySelector("#hard");
 
 easyMode.addEventListener("click", function() {
   easyMode.classList.add("selectedMode");
   hardMode.classList.remove("selectedMode");
+  return easyModeOn();
 });
 
 hardMode.addEventListener("click", function() {
   hardMode.classList.add("selectedMode");
   easyMode.classList.remove("selectedMode");
+  return hardModeOn();
 });
 
+function easyModeOn() {
+  arrColorsSet = newGame(3);
+  theColor = pickedColor();
+  getNewColor();
+  generateColors();
+  lowerColorBoxes.style.display = "none";
+}
 
-// })addEventListener("click", function () {
-//   easyMode.classList.toggle("selectedMode");
-//   hardMode.classList.toggle("selectedMode");
-// });
+function hardModeOn() {
+  arrColorsSet = newGame(6);
+  theColor = pickedColor();
+  getNewColor();
+  generateColors();
+  lowerColorBoxes.style.display = "flex";
+}
 
 newColors.addEventListener("click", function (){
-    arrColorsSet = resetGame(6);
-    theColor = pickedColor();
-    getNewColor();
-    generateColors();
+  arrColorsSet = newGame(6);
+  theColor = pickedColor();
+  getNewColor();
+  generateColors();
 });
 ////////////////////////////////////////////////////////////////
