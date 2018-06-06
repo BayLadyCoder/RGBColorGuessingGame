@@ -112,9 +112,11 @@ function hardModeOn() {
 }
 
 newColors.addEventListener("click", function (){
-  arrColorsSet = newGame(6);
-  theColor = pickedColor();
-  getNewColor();
-  generateColors();
+  if(easyMode.classList.contains("selectedMode")) {
+    return easyModeOn();
+  }
+  else {
+    return hardModeOn();
+  }
 });
 ////////////////////////////////////////////////////////////////
