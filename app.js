@@ -10,8 +10,6 @@ function randomColor() {
   return `${red}, ${green}, ${blue}`;
 }
 
-
-
 // Create an array of set of random numbers
 function arrColors(num){
   const arrColors = [];
@@ -22,35 +20,51 @@ function arrColors(num){
 }
 
 
+
 const rgbHeader = document.querySelector("#rgbHeader");
 const colorBoxes = [...document.querySelectorAll(".colorBoxes")];
 
-const arrColorsSet = arrColors(6);
+function resetGame(num) {
+  const arrColorsSet = arrColors(num);
+  return arrColorsSet;
+};
+
+let arrColorsSet = resetGame(6);
 
 function pickedColor() {
-  const randomPick = Math.floor(Math.random()*arrColorsSet.length);
-  const pickedColor = `rgb(${arrColorsSet[randomPick]})`;
-  return pickedColor;
-}
-function generateColors() {
-  for (let i=0 ; i< colorBoxes.length ; i++) {
-    colorBoxes[i].style.background = `rgb(${arrColorsSet[i]})`;
+    const randomPick = Math.floor(Math.random()*arrColorsSet.length);
+    const pickedColor = `rgb(${arrColorsSet[randomPick]})`;
+    return pickedColor;
+};
+
+let theColor = pickedColor();
+
+  function generateColors() {
+    for (let i=0 ; i< colorBoxes.length ; i++) {
+      colorBoxes[i].style.background = `rgb(${arrColorsSet[i]})`;
+    }
   }
-}
+  ////////////////////////////////////////////////////////////////
+  function getNewColor() {
+    return rgbHeader.innerHTML = `RGB ${theColor}`;
+  }
+
+  getNewColor();
+  generateColors();
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////
-function getNewColor() {
-  return rgbHeader.innerHTML = `RGB ${pickedColor()}`;
-}
-
-getNewColor(6);
-generateColors();
-////////////////////////////////////////////////////////////////
-
-
 const clickedColor = colorBoxes.map(box => {
   box.addEventListener("click", function () {
   const clickedColorVal = this.style.backgroundColor;
-  const pickedColorVal = pickedColor();
+  const pickedColorVal = theColor;
+  console.log(pickedColorVal);
+  console.log(clickedColorVal);
 
   if (clickedColorVal === pickedColorVal) {
     return colorBoxes.map(box => {
@@ -62,3 +76,34 @@ const clickedColor = colorBoxes.map(box => {
     return this.style = "background: #232323; opacity: 0;";
   }
 })});
+////////////////////////////////////////////////////////////////
+
+
+const newColors = document.querySelector("#newColors");
+const whichModes = [...document.querySelectorAll(".modeOptions")];
+const easyMode = whichModes[0];
+const hardMode = whichModes[1];
+
+easyMode.addEventListener("click", function() {
+  easyMode.classList.add("selectedMode");
+  hardMode.classList.remove("selectedMode");
+});
+
+hardMode.addEventListener("click", function() {
+  hardMode.classList.add("selectedMode");
+  easyMode.classList.remove("selectedMode");
+});
+
+
+// })addEventListener("click", function () {
+//   easyMode.classList.toggle("selectedMode");
+//   hardMode.classList.toggle("selectedMode");
+// });
+
+newColors.addEventListener("click", function (){
+    arrColorsSet = resetGame(6);
+    theColor = pickedColor();
+    getNewColor();
+    generateColors();
+});
+////////////////////////////////////////////////////////////////
