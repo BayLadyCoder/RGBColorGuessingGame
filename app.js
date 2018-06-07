@@ -46,7 +46,7 @@ function generateColors() {
 }
 
 function getNewColor() {
-  return rgbHeader.innerHTML = `RGB ${theColor}`;
+  return rgbHeader.innerHTML = `${theColor}`;
 }
 
 let arrColorsSet = newGame(6);
