@@ -151,6 +151,7 @@ h2 {
 	}
 	.navBar {
 		font-size: 15px;
+		height: 35px;
 	}
 
 	#newColors:hover, #easy:hover, #hard:hover {
@@ -161,4 +162,29 @@ h2 {
 		width: 550px;
 		height: 250px;
 	}
+}
+
+@media only screen and (max-width: 650px) {
+		h2 {
+		font-size: 15px;
+	}
+	#rgbHeader {
+		font-size: 20px;
+	}
+	.navBar {
+		font-size: 10px;
+		height: 30px;
+	}
+
+	#newColors:hover, #easy:hover, #hard:hover {
+		font-size: 15px;
+	}
+
+	.colorBoxesContainer {
+		width: 430px;
+		height: 200px;
+		padding-top: 30px;
+		margin-top: 30px;
+	}
+
 }
