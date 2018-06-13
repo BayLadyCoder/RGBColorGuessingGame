@@ -97,8 +97,8 @@ h2 {
 	align-items: center;
 	width: 800px;
 	height: 350px;
-	padding-top: 20px;
-	margin-top: 30px;
+	padding-top: 40px;
+	margin-top: 40px;
 	border-radius: 20px;
 }
 
@@ -124,12 +124,10 @@ h2 {
 
 @media only screen and (max-width: 1200px) {
 	h2 {
-		margin: 8px 0;
 		font-size: 20px;
 	}
 	#rgbHeader {
 		font-size: 30px;
-		font-weight: 700;
 	}
 	.navBar {
 		font-size: 18px;
@@ -140,14 +138,27 @@ h2 {
 	}
 
 	.colorBoxesContainer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		width: 650px;
 		height: 300px;
-		padding-top: 20px;
-		margin-top: 30px;
-		border-radius: 20px;
+	}
+}
+@media only screen and (max-width: 900px) {
+		h2 {
+		font-size: 18px;
+	}
+	#rgbHeader {
+		font-size: 25px;
+	}
+	.navBar {
+		font-size: 15px;
+	}
+
+	#newColors:hover, #easy:hover, #hard:hover {
+		font-size: 18px;
+	}
+
+	.colorBoxesContainer {
+		width: 550px;
+		height: 250px;
 	}
 }
