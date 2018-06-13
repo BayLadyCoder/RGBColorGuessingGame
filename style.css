@@ -121,3 +121,33 @@ h2 {
 	cursor: pointer;
 	border: solid white 3px;
 }
+
+@media only screen and (max-width: 1200px) {
+	h2 {
+		margin: 8px 0;
+		font-size: 20px;
+	}
+	#rgbHeader {
+		font-size: 30px;
+		font-weight: 700;
+	}
+	.navBar {
+		font-size: 18px;
+	}
+
+	#newColors:hover, #easy:hover, #hard:hover {
+		font-size: 20px;
+	}
+
+	.colorBoxesContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 650px;
+		height: 300px;
+		padding-top: 20px;
+		margin-top: 30px;
+		border-radius: 20px;
+	}
+}
