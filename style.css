@@ -55,11 +55,14 @@ h2 {
 	padding: 0 20px;
 }
 
-#newColors:hover, #easy:hover, #hard:hover {
+#newColors:hover,
+#easy:hover,
+#hard:hover {
 	border: solid 1px #2f6ae0;
 	cursor: pointer;
 	font-size: 22px;
 }
+
 #tryAgain {
 	color: #ed6410;
 	font-weight: 400;
@@ -75,7 +78,8 @@ h2 {
 	height: 100%;
 }
 
-#easy, #hard {
+#easy,
+#hard {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -97,12 +101,13 @@ h2 {
 	align-items: center;
 	width: 800px;
 	height: 350px;
+	margin-top: 5%;
 	padding-top: 40px;
-	margin-top: 40px;
 	border-radius: 20px;
 }
 
-#upperColorBoxes, #lowerColorBoxes {
+#upperColorBoxes,
+#lowerColorBoxes {
 	display: flex;
 	justify-content: space-between;
 	width: 90%;
@@ -126,14 +131,18 @@ h2 {
 	h2 {
 		font-size: 20px;
 	}
+
 	#rgbHeader {
 		font-size: 30px;
 	}
+
 	.navBar {
 		font-size: 18px;
 	}
 
-	#newColors:hover, #easy:hover, #hard:hover {
+	#newColors:hover,
+	#easy:hover,
+	#hard:hover {
 		font-size: 20px;
 	}
 
@@ -142,19 +151,24 @@ h2 {
 		height: 300px;
 	}
 }
+
 @media only screen and (max-width: 900px) {
-		h2 {
+	h2 {
 		font-size: 18px;
 	}
+
 	#rgbHeader {
 		font-size: 25px;
 	}
+
 	.navBar {
 		font-size: 15px;
 		height: 35px;
 	}
 
-	#newColors:hover, #easy:hover, #hard:hover {
+	#newColors:hover,
+	#easy:hover,
+	#hard:hover {
 		font-size: 18px;
 	}
 
@@ -165,26 +179,30 @@ h2 {
 }
 
 @media only screen and (max-width: 650px) {
-		h2 {
+	h2 {
 		font-size: 15px;
 	}
+
 	#rgbHeader {
 		font-size: 20px;
 	}
+
 	.navBar {
 		font-size: 10px;
 		height: 30px;
 	}
 
-	#newColors:hover, #easy:hover, #hard:hover {
+	#newColors:hover,
+	#easy:hover,
+	#hard:hover {
 		font-size: 15px;
 	}
 
 	.colorBoxesContainer {
 		width: 430px;
 		height: 200px;
-		padding-top: 30px;
-		margin-top: 30px;
+		padding: 30px;
+		/* margin-top: 30px; */
 	}
 
 }
